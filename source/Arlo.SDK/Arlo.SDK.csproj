@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ABECF6FE-9FEC-4631-9F01-DB04A6C0D17B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Arlo.SDK</RootNamespace>
+    <AssemblyName>Arlo.SDK</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract\IArloEventRepo.cs" />
+    <Compile Include="Contract\IArloRegistrationSearchRepo.cs" />
+    <Compile Include="Contract\IArloRepoBase.cs" />
+    <Compile Include="Contract\IContactListRepo.cs" />
+    <Compile Include="Contract\IContactRepo.cs" />
+    <Compile Include="Contract\ICustomFieldsRepo.cs" />
+    <Compile Include="Contract\IEventSessionRepo.cs" />
+    <Compile Include="Contract\IGenericWebRepo.cs" />
+    <Compile Include="Contract\IRoomRepo.cs" />
+    <Compile Include="Contract\ISystemService.cs" />
+    <Compile Include="Contract\ITimeService.cs" />
+    <Compile Include="Contract\IVenueRepo.cs" />
+    <Compile Include="Entities\ArloRegistration.cs" />
+    <Compile Include="Entities\Product\ArloCustomFields.cs" />
+    <Compile Include="Entities\Product\ArloContact.cs" />
+    <Compile Include="Entities\ArloSession.cs" />
+    <Compile Include="Entities\Product\ArloEvent.cs" />
+    <Compile Include="Entities\Product\ArloEventSessionRegistration.cs" />
+    <Compile Include="Entities\Product\ArloRoom.cs" />
+    <Compile Include="Entities\Product\ContactList.cs" />
+    <Compile Include="Entities\Product\EventSessionRegistrations.cs" />
+    <Compile Include="Entities\Product\EventRegistrationList.cs" />
+    <Compile Include="Entities\Product\SessionList.cs" />
+    <Compile Include="Entities\System\Constants.cs" />
+    <Compile Include="Entities\Product\EventList.cs" />
+    <Compile Include="Entities\Base\ListOfLinks.cs" />
+    <Compile Include="Entities\Base\Link.cs" />
+    <Compile Include="Entities\System\SessionExtensions.cs" />
+    <Compile Include="Glue\SDKModule.cs" />
+    <Compile Include="Impl\XmlEntitySerialiser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repo\ArloEventRepo.cs" />
+    <Compile Include="Repo\ArloRegistrationSearchRepo.cs" />
+    <Compile Include="Repo\Base\ArloRepoBase.cs" />
+    <Compile Include="Repo\Base\XWebRepo2.cs" />
+    <Compile Include="Repo\ContactListRepo.cs" />
+    <Compile Include="Repo\ContactRepo.cs" />
+    <Compile Include="Repo\CustomFieldsRepo.cs" />
+    <Compile Include="Repo\EventSessionRepo.cs" />
+    <Compile Include="Repo\GenericWebRepo.cs" />
+    <Compile Include="Repo\EventListRepo.cs" />
+    <Compile Include="Contract\IEventListRepo.cs" />
+    <Compile Include="Contract\IEventService.cs" />
+    <Compile Include="Contract\ISessionService.cs" />
+    <Compile Include="Repo\RoomRepo.cs" />
+    <Compile Include="Repo\VenueRepo.cs" />
+    <Compile Include="Services\ArloSessionRegistrationService.cs" />
+    <Compile Include="Services\ContactService.cs" />
+    <Compile Include="Contract\IContactService.cs" />
+    <Compile Include="Contract\IArloSessionRegistrationService.cs" />
+    <Compile Include="Contract\ISyncService.cs" />
+    <Compile Include="Services\SessionService.cs" />
+    <Compile Include="Services\SyncService.cs" />
+    <Compile Include="Services\System\CachingService.cs" />
+    <Compile Include="Services\System\ConfigService.cs" />
+    <Compile Include="Services\EventService.cs" />
+    <Compile Include="Contract\IConfigService.cs" />
+    <Compile Include="Contract\ICachingService.cs" />
+    <Compile Include="Services\System\ExternalAuthService.cs" />
+    <Compile Include="Services\System\SystemService.cs" />
+    <Compile Include="Services\System\TransferConfigService.cs" />
+    <Compile Include="Util\ArloLinkHelper.cs" />
+    <Compile Include="Util\TaskTools.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

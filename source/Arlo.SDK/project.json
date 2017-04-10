@@ -1,0 +1,14 @@
+﻿{
+  "supports": {},
+  "dependencies": {
+    "Autofac": "4.3.0",
+    "AutoMapper": "5.2.0",
+    "newtonsoft.json": "9.0.1",
+    "System.Xml.XmlSerializer": "4.3.0",
+    "XamlingAzure": "1.0.6",
+    "XamlingCore": "2.1.152"
+  },
+  "frameworks": {
+    ".NETPortable,Version=v4.5,Profile=Profile7": {}
+  }
+}
